@@ -1,0 +1,433 @@
+/* FONTS */
+
+@import url('https://fonts.googleapis.com/css?family=Saira+Condensed:100,300,400,500,700,900');
+
+/* END of FONTS */
+
+/* MAIN */
+
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	font-family: Saira Condensed;
+	font-size: 16px;
+	color: #343434;
+}
+
+.left {
+	float: left !important;
+}
+
+.right {
+	float: right !important;
+}
+
+a {
+	text-decoration: none;
+}
+
+li {
+	list-style: none;
+}
+
+body {
+	background: #5a2020;
+}
+
+/* END of MAIN */
+
+/* CHORDS */
+
+header {
+	position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;
+    background: #c76b6b;
+}
+
+#name {
+	position: relative;
+}
+
+#name .normal {
+	overflow: hidden;
+	width: 100%;
+	height: 100px;
+}
+
+#name .normal li {
+	float: left;
+	width: calc((100% / 7) - 2px);
+	margin: 1px;
+	background: #fff;
+	height: 100%;
+	text-align: center;
+	vertical-align: bottom;
+	position: relative;
+}
+
+#name .normal li:hover {
+	background: #eee;
+}
+
+#name .normal li.active {
+	background: #5a2020;
+}
+
+#name .normal li.active span {
+	color: #fff;
+}
+
+#name .normal li span {
+	color: #333;
+	position: absolute;
+	bottom: 0;
+	left: 50%;
+	transform: translateX(-50%);
+}
+
+#name .diez {
+	position: absolute;
+	overflow: hidden;
+	width: 100%;
+	height: 50px;
+	top: 1px;
+}
+
+#name .diez li {
+	float: left;
+	width: calc(100% / 13);
+	margin-left: calc((100% / 7) - calc(100% / 13));
+	background: #222;
+	height: 100%;
+	text-align: center;
+	vertical-align: bottom;
+	position: relative;
+	transform: translateX(-50%);
+}
+
+#name .diez li:hover {
+	background: #444;
+}
+
+#name .diez li.active {
+	background: #5a2020;
+}
+
+#name .diez li.active span {
+	color: #fff;
+}
+
+#name .diez li span {
+	color: #fff;
+	position: absolute;
+	top: 0;
+	left: 50%;
+	transform: translateX(-50%);
+}
+
+#name .diez li:nth-child(1) {
+	margin-left: calc(100% / 7);
+}
+
+#name .diez li:nth-child(3) {
+	margin-left: calc((100% / 7) * 2 - calc(100% / 13));
+}
+
+#type {
+	position: relative;
+	margin-top: 20px;
+	height: 40px;
+	overflow: hidden;
+}
+
+#type li {
+	float: left;
+	width: calc(25% - 2px);
+	margin: 1px;
+	background: #fff;
+	height: 100%;
+	position: relative;
+}
+
+#type li:hover {
+	background: #eee;
+}
+
+#type li.active {
+	background: #5a2020;
+}
+
+#type li.active span {
+	color: #fff;
+}
+
+#type li span {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate3d(-50%, -50%, 0);
+}
+
+/* END of CHORDS */
+
+/* CHORD */
+
+section {
+	margin-top: 170px;
+	margin-bottom: 50px;
+}
+
+.chord {
+	width: 320px;
+	height: 290px;
+	padding: 20px 20px 40px;
+	margin: 20px auto;
+	background: #fff;
+	position: relative;
+	display: none;
+	transition: all 3s ease;
+}
+
+.chord.active {
+	display: block;
+}
+
+.chord .grif {
+	width: 100%;
+	height: 100%;
+	position: relative;
+	background: #58380c;
+}
+
+.chord .grif .lads {
+	overflow: hidden;
+	height: 100%;
+    padding: 0 5px;
+}
+
+.chord .grif .lads li {
+	float: left;
+	width: calc(100% / 3);
+	height: 100%;
+	border-left: 3px solid #b8bbbb;
+	border-right: 3px solid #8C9090;
+}
+
+.chord .grif .strings {
+	overflow: hidden;
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+.chord .grif .strings li {
+	width: 100%;
+	height: 0;
+	border-top: 3px solid #ece9e9;
+	border-bottom: 3px solid #585858;
+	margin-top: calc(100% / 7 - 3px);
+	transform: translateY(-50%);
+	box-shadow: 0 3px 13px #000;
+}
+
+.chord .grif .strings li:nth-child(4),
+.chord .grif .strings li:nth-child(5),
+.chord .grif .strings li:nth-child(6) {
+	border-top: 1px solid #ece9e9;
+	border-bottom: 1px solid #585858;
+}
+
+.chord .grif .strings li:nth-child(1) {
+	margin-top: 10px;
+}
+
+.fingers {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
+.fingers div {
+	width: 20px;
+	height: 20px;
+	background: #bb2b2b;
+	border-radius: 10px;
+	text-align: center;
+	position: absolute;
+	transform: translateX(50%);
+}
+
+.fingers div span {
+	color: #fff;
+}
+
+.nofinger {
+	right: 0;
+}
+
+.bar {
+	height: auto !important;
+}
+
+.lad0.finger1, .lad0.finger2 {
+	right: calc(100% / 6);
+}
+
+.lad1.finger1 {
+	right: calc(100% / 6 + 100% / 3);
+}
+
+.lad2.finger1 {
+	right: calc(100% / 6 + 2 * (100% / 3));
+}
+
+.lad0.finger3 {
+	right: calc(100% / 6 + 2 * (100% / 3) - 10px);
+}
+
+.lad0.finger4 {
+	right: calc(100% / 6 + 2 * (100% / 3));
+}
+
+.lad1.finger2 {
+	right: calc(100% / 6 + 100% / 3 - 10px);
+}
+
+.lad1.finger3 {
+	right: calc(100% / 6 + 100% / 3);
+}
+
+.lad1.finger4 {
+	right: calc(100% / 6 + 100% / 3 + 10px);
+}
+
+.lad2.finger2 {
+	right: calc(100% / 6 + 2 * (100% / 3) - 10px);
+}
+
+.lad2.finger3 {
+	right: calc(100% / 6 + 2 * (100% / 3));
+}
+
+.lad2.finger4 {
+	right: calc(100% / 6 + 2 * (100% / 3) + 10px);
+}
+
+.strings6 {
+	top: 0;
+}
+
+.strings5 {
+	top: calc(5px + 100% / 6);
+}
+
+.strings4 {
+	top: calc(10px + 2 * (100% / 6));
+}
+
+.strings3 {
+	top: calc(14px + 3 * (100% / 6));
+}
+
+.strings2 {
+	top: calc(15px + 4 * (100% / 6));
+}
+
+.strings1 {
+	bottom: 4px;
+}
+
+.strings1-2, .strings2-1 {
+	top: calc(15px + 4 * (100% / 6));
+	bottom: 4px;
+}
+
+.strings1-3, .strings3-1 {
+	top: calc(14px + 3 * (100% / 6));
+	bottom: 4px;
+}
+
+.strings1-4, .strings4-1 {
+	top: calc(10px + 2 * (100% / 6));
+	bottom: 4px;
+}
+
+.strings1-5, .strings5-1 {
+	top: calc(5px + 100% / 6);
+	bottom: 4px;
+}
+
+.strings1-6, .strings6-1 {
+	top: 0;
+	bottom: 4px;
+}
+
+.strings2-3, .strings3-2 {
+	top: calc(14px + 3 * (100% / 6));
+	bottom: calc(5px + 100% / 6);
+}
+
+.strings2-4, .strings4-2 {
+	top: calc(10px + 2 * (100% / 6));
+	bottom: calc(5px + 100% / 6);
+}
+
+.strings2-5, .strings5-2 {
+	top: calc(5px + 100% / 6);
+	bottom: calc(5px + 100% / 6);
+}
+
+.strings2-6, .strings6-2 {
+	top: 0;
+	bottom: calc(5px + 100% / 6);
+}
+
+.strings3-4, .strings4-3 {
+	top: calc(10px + 2 * (100% / 6));
+	bottom: calc(5px + 2 * (100% / 6));
+}
+
+.strings3-5, .strings5-3 {
+	top: calc(5px + 100% / 6);
+	bottom: calc(5px + 2 * (100% / 6));
+}
+
+.strings3-6, .strings6-3 {
+	top: 0;
+	bottom: calc(5px + 2 * (100% / 6));
+}
+
+.strings4-5, .strings5-4 {
+	top: calc(5px + 100% / 6);
+	bottom: calc(7px + 3 * (100% / 6));
+}
+
+.strings4-6, .strings6-4 {
+	top: calc(5px + 100% / 6);
+	bottom: calc(7px + 3 * (100% / 6));
+}
+
+.strings5-6, .strings6-5 {
+	top: 0;
+	bottom: calc(12px + 4 * (100% / 6));
+}
+
+.chord > .lads {
+	overflow: hidden;
+}
+
+.chord > .lads li {
+	width: 33%;
+	float: right;
+	text-align: center;
+}
+
+/* END of CHORD */
